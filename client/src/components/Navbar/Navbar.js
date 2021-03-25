@@ -11,7 +11,7 @@ const Navbar = () => {
       </div>
       <Toolbar>
         <Typography variant="subtitle1">UserName</Typography>
-        <Button variant="outlined">Logout</Button>
+        <Button variant="outlined">Button Component</Button>
       </Toolbar>
     </AppBar>
   );
