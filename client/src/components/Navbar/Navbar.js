@@ -3,9 +3,17 @@ import { AppBar, Typography, Toolbar, Button } from "@material-ui/core";
 
 const Navbar = () => {
   return (
-    <div>
-      <Typography variant='h2' align="center">NavBar Component</Typography>
-    </div>
+    <AppBar position="fixed" color="transparent">
+      <div>
+        <Typography variant="h3" align="left">
+          NavBar Component
+        </Typography>
+      </div>
+      <Toolbar>
+        <Typography variant="subtitle1">UserName</Typography>
+        <Button variant="outlined">Logout</Button>
+      </Toolbar>
+    </AppBar>
   );
 };
 

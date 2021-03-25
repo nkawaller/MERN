@@ -9,7 +9,6 @@ const App = () => {
       <Container
         maxWidth="lg"
         disableGutters={true}
-        style={{ background: "palevioletred" }}
       >
         <Navbar />
       </Container>
