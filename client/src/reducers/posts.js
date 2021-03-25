@@ -1,9 +1,10 @@
+import { FETCH_ALL, CREATE, UPDATE, DELETE, LIKE } from '../constants/actionTypes'
 // eslint-disable-next-line
 export default (posts = [], action) => {
     switch (action.type) {
-        case 'FETCH_ALL':
+        case FETCH_ALL:
             return posts;
-        case 'CREATE':
+        case CREATE:
             return posts;
     
         default:
