@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { AppBar, Typography, Toolbar, Button } from "@material-ui/core";
+import { useDispatch } from 'react-redux';
 import useStyles from './style'
 
 const Navbar = () => {
   const classes = useStyles();
+  // const dispatch = useDispatch();
+
+
   return (
     <AppBar className={classes.appBar} position="fixed" color="transparent" elevation={0}>
       <div className={classes.brandContainer}>
