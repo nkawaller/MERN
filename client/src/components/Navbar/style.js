@@ -1,8 +1,10 @@
 import { makeStyles } from '@material-ui/core/styles';
 
-export default makeStyles((theme) => ({
+// Pass theme into the callback if you want to use purple
+
+export default makeStyles(() => ({
     appBar: {
-        background: 'palevioletred',
+        // background: 'palevioletred',
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'space-between',
@@ -13,9 +15,21 @@ export default makeStyles((theme) => ({
         color: 'black',
     },
     toolbar: {
-        background: 'papayawhip',
+        // background: 'papayawhip',
         display: 'flex',
         justifyContent: 'flex-end',
-        width: '400px'
+    },
+    profile: {
+        display: 'flex',
+        justifyContent: 'space-between',
+        width: '300px'
+    },
+    userName: {
+        display: 'flex',
+        alignItems: 'center',
+    },
+    brandContainer: {
+        display: 'flex',
+        alignItems: 'center'
     }
 }))

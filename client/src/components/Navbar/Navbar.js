@@ -5,7 +5,7 @@ import useStyles from './style'
 const Navbar = () => {
   const classes = useStyles();
   return (
-    <AppBar className={classes.appBar} position="fixed" color="transparent">
+    <AppBar className={classes.appBar} position="fixed" color="transparent" elevation={0}>
       <div className={classes.brandContainer}>
         <Typography className={classes.heading} variant="h3" align="left">
           NavBar Component
@@ -15,7 +15,7 @@ const Navbar = () => {
         <div className={classes.profile}>
         <Typography className={classes.userName} variant="subtitle1">UserName</Typography>
         </div>
-        <Button variant="outlined">Button Component</Button>
+        <Button variant="outlined">Log In</Button>
       </Toolbar>
     </AppBar>
   );
