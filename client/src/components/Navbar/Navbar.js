@@ -1,16 +1,20 @@
 import React from "react";
 import { AppBar, Typography, Toolbar, Button } from "@material-ui/core";
+import useStyles from './style'
 
 const Navbar = () => {
+  const classes = useStyles();
   return (
-    <AppBar position="fixed" color="transparent">
-      <div>
-        <Typography variant="h3" align="left">
+    <AppBar className={classes.appBar} position="fixed" color="transparent">
+      <div className={classes.brandContainer}>
+        <Typography className={classes.heading} variant="h3" align="left">
           NavBar Component
         </Typography>
       </div>
-      <Toolbar>
-        <Typography variant="subtitle1">UserName</Typography>
+      <Toolbar className={classes.toolbar}>
+        <div className={classes.profile}>
+        <Typography className={classes.userName} variant="subtitle1">UserName</Typography>
+        </div>
         <Button variant="outlined">Button Component</Button>
       </Toolbar>
     </AppBar>
