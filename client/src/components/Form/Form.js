@@ -14,14 +14,14 @@ const Form = () => {
             // </Paper>
 
             <Paper className={classes.paper}>
-                <form className={`${classes.root} ${classes.form}`}>
-                    <Typography>Form Title</Typography>
-                    <TextField></TextField>
-                    <TextField></TextField>
-                    <TextField></TextField>
+                <form autoComplete="off" noValidate className={`${classes.root} ${classes.form}`}>
+                    <Typography variant="h6">Form Title</Typography>
+                    <TextField name="title" variant="outlined" label="Title" fullWidth></TextField>
+                    <TextField name="message" variant="outlined" label="Message" fullWidth multiline rows={4}></TextField>
+                    <TextField name="tags" variant="outlined" label="Tags" fullWidth></TextField>
                     <div className={classes.fileInput}><FileBase></FileBase></div>
-                    <Button className={classes.buttonSubmit}>Form Button 1</Button>
-                    <Button>Form Button 2</Button>
+                    <Button className={classes.buttonSubmit} variant="outlined" color="default" size="large" type="submit" fullWidth>Submit</Button>
+                    <Button variant="outlined" color="default" size="small" fullWidth>Clear</Button>
                 </form>
             </Paper>
     )

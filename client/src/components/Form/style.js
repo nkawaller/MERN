@@ -13,7 +13,8 @@ export default makeStyles((theme) => ({
         display: 'flex',
         flexWrap: 'wrap',
         justifyContent: 'center',
-        background: 'hsla(50,50,50, .5)'
+        background: 'hsla(185, 100%, 76%, 0.3)',
+        marginTop: '8rem',
     },
     fileInput: {
         width: '97%',
