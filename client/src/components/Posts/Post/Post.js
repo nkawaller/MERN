@@ -1,9 +1,10 @@
 import React from 'react'
+import { Typography } from '@material-ui/core';
 
 const Post = () => {
     return (
         <div>
-         This is a message from Post!   
+            <Typography variant='body1'>Post</Typography>
         </div>
     )
 }

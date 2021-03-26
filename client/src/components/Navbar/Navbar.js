@@ -9,7 +9,7 @@ const Navbar = () => {
 
 
   return (
-    <AppBar className={classes.appBar} position="fixed" color="transparent" elevation={0}>
+    <AppBar className={classes.appBar} position="static" color="transparent" elevation={0}>
       <div className={classes.brandContainer}>
         <Typography className={classes.heading} variant="h3" align="left">
           NavBar Component

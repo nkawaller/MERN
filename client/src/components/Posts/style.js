@@ -2,7 +2,7 @@ import { makeStyles } from '@material-ui/core/styles'
 
 export default makeStyles((theme) => ({
     container: {
-        background: 'palevioletred',
+        border: '3px solid black',
         display: 'flex',
         alignItems: 'center',
         marginTop: '7rem'

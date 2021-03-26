@@ -15,6 +15,8 @@ const Posts = () => {
     <Grid className={classes.container} container alignItems="stretch" spacing={3}>
       <Grid item xs={12} sm={6}>
         <Post />
+        <Post />
+        <Post />
       </Grid>
     </Grid>
   );
