@@ -1,7 +1,11 @@
 import React from 'react'
 import { TextField, Button, Typography, Paper } from '@material-ui/core';
+import FileBase from 'react-file-base64';
+import useStyles from './style'
 
 const Form = () => {
+
+    const classes = useStyles();
     return (
             // <Paper>
             //     <Typography variant="h6">
@@ -9,13 +13,14 @@ const Form = () => {
             //     </Typography>
             // </Paper>
 
-            <Paper>
-                <form>
+            <Paper className={classes.paper}>
+                <form className={`${classes.root} ${classes.form}`}>
                     <Typography>Form Title</Typography>
                     <TextField></TextField>
                     <TextField></TextField>
                     <TextField></TextField>
-                    <Button>Form Button 1</Button>
+                    <div className={classes.fileInput}><FileBase></FileBase></div>
+                    <Button className={classes.buttonSubmit}>Form Button 1</Button>
                     <Button>Form Button 2</Button>
                 </form>
             </Paper>
