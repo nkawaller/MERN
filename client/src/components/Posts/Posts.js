@@ -11,15 +11,15 @@ const Posts = () => {
 
   console.log(posts);
   return (
-      // Add Circular Progress here
+    !posts.length ? <CircularProgress className={classes.progress}/> : (
     <Grid className={classes.container} container alignItems="stretch" spacing={3}>
-      <Grid item xs={12} sm={6}>
-        <Post />
-        <Post />
-        <Post />
+      {posts.map((post) => (
+      <Grid key={post._id} item xs={12} sm={6} md={6}>
+        <Post post={post} />
       </Grid>
+      ))}
     </Grid>
-  );
+  ));
 };
 
 export default Posts;

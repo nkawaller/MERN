@@ -28,7 +28,7 @@ const Form = () => {
     //     </Typography>
     // </Paper>
 
-    <Paper className={classes.paper}>
+    <Paper className={classes.paper} elevation={24}>
       <form
         autoComplete="off"
         noValidate

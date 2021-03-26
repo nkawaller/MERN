@@ -12,5 +12,8 @@ export default makeStyles((theme) => ({
     },
     actionDiv: {
         textAlign: 'center',
+    },
+    progress: {
+        color: 'palevioletred'
     }
 }))
