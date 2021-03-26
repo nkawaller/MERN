@@ -9,7 +9,7 @@ const Posts = () => {
   const posts = useSelector((state) => state.posts);
   const classes = useStyles();
 
-  console.log(posts);
+  // console.log(posts);
   return (
     !posts.length ? <CircularProgress className={classes.progress}/> : (
     <Grid className={classes.container} container alignItems="stretch" spacing={3}>
@@ -19,7 +19,8 @@ const Posts = () => {
       </Grid>
       ))}
     </Grid>
-  ));
+  )
+ );
 };
 
 export default Posts;
