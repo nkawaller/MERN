@@ -7,11 +7,11 @@ import {
   Button,
   Typography,
 } from "@material-ui/core";
-import ThumbUpAltIcon from "@material-ui/icons/ThumbUpAlt";
+import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import DeleteIcon from "@material-ui/icons/Delete";
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 import moment from "moment";
-import { useDispatch } from 'react-redux';
+// import { useDispatch } from 'react-redux';
 
 import useStyles from "./style";
 
@@ -50,7 +50,7 @@ const Post = ({ post, setCurrentId }) => {
       </CardContent>
       <CardActions className={classes.cardActions}>
         <Button size="small" color="primary">
-          <ThumbUpAltIcon />
+          <FavoriteBorderIcon />
         </Button>
         <Button size="small" color="primary">
           <DeleteIcon fontSize="small" />
