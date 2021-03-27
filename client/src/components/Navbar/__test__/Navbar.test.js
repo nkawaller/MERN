@@ -1,15 +1,21 @@
-import React from "react";
-import ReactDOM from "react-dom";
+// import React from "react";
+// import ReactDOM from "react-dom";
 
-import Navbar from "../Navbar";
+// import Navbar from "../Navbar";
 
-import { render, cleanup } from "@testing-library/react";
-import "@testing-library/jest-dom";
+// import { render, cleanup } from "@testing-library/react";
+// import "@testing-library/jest-dom";
 
-import renderer from 'react-test-renderer';
+// import renderer from 'react-test-renderer';
+// import { ExpansionPanelActions } from "@material-ui/core";
 
-afterEach(cleanup);
-it("renders without crashing", () => {
-    const div = document.createElement("div");
-    ReactDOM.render(<Navbar></Navbar>, div)
-})
+// afterEach(cleanup);
+// it("renders without crashing", () => {
+//     const div = document.createElement("div");
+//     ReactDOM.render(<Navbar></Navbar>, div)
+// })
+
+// it('renders the navbar correctly', () => {
+//     const {getByTestId} = render(<Navbar>NavBar Component</Navbar>)
+//     expect(getByTestId('navbar')).toHaveTextContent("NavBar Component")
+// })
