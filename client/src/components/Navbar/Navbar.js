@@ -20,10 +20,10 @@ const Navbar = () => {
         {user ? (
         <div className={classes.profile}>
         <Typography className={classes.userName} variant="h6">{user.result.name}</Typography>
-        <Button variant="outlined">Log In</Button>
+        <Button  variant="outlined">Log In</Button>
         </div>
         ) : (
-        <Button variant="outlined">Log In</Button>
+        <Button component={Link} to='/auth' variant="outlined">Log In</Button>
         )}
       </Toolbar>
     </AppBar>
