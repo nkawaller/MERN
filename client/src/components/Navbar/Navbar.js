@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
 import { AppBar, Typography, Toolbar, Button } from "@material-ui/core";
 import { useDispatch } from 'react-redux';
@@ -7,7 +7,12 @@ import useStyles from './style'
 const Navbar = () => {
   const classes = useStyles();
   // const dispatch = useDispatch();
-  const user = null;
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')))
+
+useEffect(() => {
+  const token = user?.token;
+  setUser(JSON.parse(localStorage.getItem('profile')))
+}, [])
 
   return (
     <AppBar data-testid='navbar' className={classes.appBar} position="static" color="transparent" elevation={0}>
