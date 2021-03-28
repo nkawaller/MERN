@@ -34,6 +34,7 @@ const Auth = () => {
     }
 
     const googleSuccess = async (res) => {
+    
         const result = res?.profileObj;
         const token = res?.tokenId;
 
@@ -77,6 +78,7 @@ const Auth = () => {
                         color="default"
                         fullWidth
                         onClick={renderProps.onClick}
+                        disabled={renderProps.disabled}
                         startIcon={<Icon />}
                         variant='outlined'
                         >
