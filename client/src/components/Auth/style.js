@@ -20,6 +20,11 @@ export default makeStyles((theme) => ({
   form: {
       width: '100%',
       marginTop: theme.spacing(3)
-
+  },
+  submit: {
+      margin: theme.spacing(3, 0, 2)
+  },
+  googleButton: {
+      marginBottom: theme.spacing(2)
   }
 }));

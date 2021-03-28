@@ -15,7 +15,7 @@ const Auth = () => {
 
     const handleChange = () => {}
 
-    const isSignup = false;
+    const [isSignup, setIsSignup] = useState(false)
 
     const handleShowPassword = () => setShowPassword((prevShowPassword) => !prevShowPassword )
 
@@ -23,6 +23,10 @@ const Auth = () => {
 
     }
 
+    const switchMode = () => {
+        setIsSignup((prevIsSignup) => !prevIsSignup);
+        handleShowPassword(false)
+    }
 
     return (
     <Container component='main' maxWidth="xs">
@@ -44,12 +48,14 @@ const Auth = () => {
                     { isSignup && <Input name="confirmPassword" label="Repeat Password" handleChange={handleChange} type="password"/>}
                 </Grid>
                 <Button type="submit" fullWidth variant="outlined" color="default" className={classes.submit}>{isSignup ? "Sign Up" : "Sign In"}</Button>
-                <GoogleLogin>
+                <GoogleLogin className={classes.googleButton}>
 
                 </GoogleLogin>
                 <Grid containter justify ="flex-end">
                     <Grid item>
-                        <Button>Sign Up</Button>
+                        <Button onClick={switchMode}>
+                            {isSignup ? 'Already have an account? Sign in' : "Don't have an account? Sign Up"}
+                        </Button>
                     </Grid>
                 </Grid>
             </form>
