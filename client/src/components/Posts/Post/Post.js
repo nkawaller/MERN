@@ -89,7 +89,7 @@ const Post = ({ post, setCurrentId }) => {
         </Typography>
         </div>
       <div className={classes.date}>
-        <Typography variant="caption">
+        <Typography variant="caption" color="textSecondary">
           {moment(post.createdAt).fromNow()}
         </Typography>
       </div>
@@ -101,7 +101,7 @@ const Post = ({ post, setCurrentId }) => {
       >
         {post.title}
       </Typography>
-      <CardContent>
+      <CardContent className={classes.message}>
         <Typography variant="body2" color="textSecondary" component="p">
           {post.message}
         </Typography>
