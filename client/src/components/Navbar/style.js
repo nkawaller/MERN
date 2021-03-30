@@ -8,6 +8,7 @@ export default makeStyles(() => ({
     justifyContent: "space-between",
     alignItems: "center",
     padding: "10px 50px",
+    marginBottom: "3rem"
   },
   heading: {
     color: "black",
@@ -15,6 +16,7 @@ export default makeStyles(() => ({
   },
   toolbar: {
     // background: 'papayawhip',
+    width: '50%',
     display: "flex",
     justifyContent: "flex-end",
   },

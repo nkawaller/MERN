@@ -5,7 +5,7 @@ export default makeStyles((theme) => ({
         // border: '3px solid black',
         display: 'flex',
         alignItems: 'center',
-        marginTop: '7rem'
+        // marginTop: '5rem'
     },
     smMargin: {
         margin: theme.spacing(1),
