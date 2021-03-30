@@ -4,7 +4,6 @@ import {
   CardActions,
   CardContent,
   CardMedia,
-  CardHeader,
   Button,
   Typography,
 } from "@material-ui/core";
@@ -29,7 +28,7 @@ const Post = ({ post, setCurrentId }) => {
         (like) => like === (user?.result?.googleId || user?.result?._id)
       ) ? (
         <>
-          <FavoriteIcon fontSize="small" />
+          <FavoriteIcon className={classes.heart} fontSize="small" />
           &nbsp;
           {post.likes.length > 2
             ? `You and ${post.likes.length - 1} others`
@@ -37,7 +36,7 @@ const Post = ({ post, setCurrentId }) => {
         </>
       ) : (
         <>
-          <FavoriteBorderIcon fontSize="small" />
+          <FavoriteBorderIcon  className={classes.heart} fontSize="small" />
           &nbsp;{post.likes.length} {post.likes.length === 1 ? "Like" : "Likes"}
         </>
       );
@@ -45,7 +44,7 @@ const Post = ({ post, setCurrentId }) => {
 
     return (
       <>
-        <FavoriteBorderIcon fontSize="small" />
+        <FavoriteBorderIcon  className={classes.heart} fontSize="small" />
         &nbsp;Like
       </>
     );
@@ -109,7 +108,7 @@ const Post = ({ post, setCurrentId }) => {
       <CardActions className={classes.cardActions}>
         <Button
           size="small"
-          color="primary"
+          color="default"
           disabled={!user?.result}
           onClick={() => dispatch(likePost(post._id))}
         >
@@ -119,7 +118,7 @@ const Post = ({ post, setCurrentId }) => {
           user?.result?._id === post?.creator) && (
           <Button
             size="small"
-            color="primary"
+            color="default"
             onClick={() => dispatch(deletePost(post._id))}
           >
             <DeleteIcon fontSize="small" />

@@ -73,4 +73,7 @@ export default makeStyles({
     display: "flex",
     justifyContent: "space-between",
   },
+  heart: {
+    color: 'palevioletred'
+  }
 });
