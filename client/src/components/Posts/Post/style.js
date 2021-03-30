@@ -5,7 +5,7 @@ export default makeStyles({
     height: 0,
     paddingTop: '56.25%',
     backgroundColor: 'rgba(0, 0, 0, 0.5)',
-    // backgroundBlendMode: 'darken',
+    // backgroundBlendMode: 'darken'
   },
   border: {
     border: 'solid',
@@ -17,7 +17,7 @@ export default makeStyles({
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
-    borderRadius: '15px',
+    // borderRadius: '15px',
     height: '100%',
     position: 'relative',
   },
@@ -26,6 +26,13 @@ export default makeStyles({
     top: '20px',
     left: '20px',
     color: 'white',
+  },
+  nameDate: {
+    // position: 'absolute',
+    // top: '20px',
+    // left: '20px',
+    margin: '20px',
+    // color: 'black',
   },
   overlay2: {
     position: 'absolute',
@@ -37,7 +44,7 @@ export default makeStyles({
     display: 'flex',
   },
   details: {
-    display: 'flex',
+    display: 'flex-end',
     justifyContent: 'space-between',
     margin: '20px',
   },

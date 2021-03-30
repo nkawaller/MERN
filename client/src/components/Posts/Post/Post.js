@@ -4,6 +4,7 @@ import {
   CardActions,
   CardContent,
   CardMedia,
+  CardHeader,
   Button,
   Typography,
 } from "@material-ui/core";
@@ -42,12 +43,12 @@ const Post = ({ post, setCurrentId }) => {
         image={post.selectedFile || 'https://user-images.githubusercontent.com/194400/49531010-48dad180-f8b1-11e8-8d89-1e61320e1d82.png'}
         title={post.title}
       />
-      <div className={classes.overlay}>
+      {/* <div className={classes.overlay}>
         <Typography variant="h6">{post.name}</Typography>
         <Typography variant="body2">
           {moment(post.createdAt).fromNow()}
         </Typography>
-      </div>
+      </div> */}
 
         {(user?.result.googleId === post?.creator || user?.result?._id === post?.creator) && (
 
@@ -57,6 +58,12 @@ const Post = ({ post, setCurrentId }) => {
         </Button>
       </div>
         )}
+        <div className={classes.nameDate}>
+        <Typography variant="h6" color="textPrimary">{post.name}</Typography>
+        <Typography variant="body2">
+          {moment(post.createdAt).fromNow()}
+        </Typography>
+        </div>
       <div className={classes.details}>
         <Typography variant="body2" color="textSecondary">
           {post.tags.map((tag) => `#${tag} `)}
