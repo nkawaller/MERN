@@ -36,7 +36,7 @@ useEffect(() => {
     <AppBar data-testid='navbar' className={classes.appBar} position="static" color="transparent" elevation={0}>
       <div className={classes.brandContainer}>
         <Typography component={Link} to='/' className={classes.heading} variant="h3" align="left">
-          NavBar Component
+          Instagram Clone
         </Typography>
       </div>
       <Toolbar className={classes.toolbar}>

@@ -11,7 +11,7 @@ export default makeStyles(() => ({
   },
   heading: {
     color: "black",
-    textDecoration: 'none'
+    textDecoration: 'none',
   },
   toolbar: {
     // background: 'papayawhip',
