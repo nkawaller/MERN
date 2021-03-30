@@ -117,8 +117,9 @@ const Form = ({ currentId, setCurrentId }) => {
           Submit
         </Button>
         <Button
-          variant="outlined"
-          color="default"
+          className={classes.button}
+          // variant="outlined"
+          // color="default"
           size="small"
           onClick={clear}
           fullWidth
