@@ -27,12 +27,20 @@ export default makeStyles({
     left: '20px',
     color: 'white',
   },
-  nameDate: {
+  nameTags: {
     // position: 'absolute',
     // top: '20px',
     // left: '20px',
+    display: 'flex',
     margin: '20px',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    background: 'aqua'
     // color: 'black',
+  },
+  date: {
+    padding: '0 16px'
+    
   },
   overlay2: {
     position: 'absolute',
@@ -44,9 +52,11 @@ export default makeStyles({
     display: 'flex',
   },
   details: {
-    display: 'flex-end',
-    justifyContent: 'space-between',
+    display: 'flex',
+    // justifyContent: 'space-between',
+    justifyContent: 'flex-end',
     margin: '20px',
+    background: 'aqua'
   },
   title: {
     padding: '0 16px',
