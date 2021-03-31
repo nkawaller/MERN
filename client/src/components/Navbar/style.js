@@ -33,4 +33,7 @@ export default makeStyles(() => ({
     display: "flex",
     alignItems: "center",
   },
+  logout: {
+    borderRadius: '0px'
+  }
 }));
