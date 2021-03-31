@@ -36,7 +36,7 @@ const Post = ({ post, setCurrentId }) => {
         </>
       ) : (
         <>
-          <FavoriteBorderIcon  className={classes.heart} fontSize="small" />
+          <FavoriteIcon  className={classes.heart} fontSize="small" />
           &nbsp;{post.likes.length} {post.likes.length === 1 ? "Like" : "Likes"}
         </>
       );
@@ -60,13 +60,6 @@ const Post = ({ post, setCurrentId }) => {
         }
         title={post.title}
       />
-      {/* <div className={classes.overlay}>
-        <Typography variant="h6">{post.name}</Typography>
-        <Typography variant="body2">
-          {moment(post.createdAt).fromNow()}
-        </Typography>
-      </div> */}
-
       {(user?.result.googleId === post?.creator ||
         user?.result?._id === post?.creator) && (
         <div className={classes.overlay2}>

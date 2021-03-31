@@ -15,7 +15,6 @@ export default makeStyles(() => ({
     textDecoration: 'none',
   },
   toolbar: {
-    // background: 'papayawhip',
     width: '50%',
     display: "flex",
     justifyContent: "flex-end",
@@ -33,7 +32,4 @@ export default makeStyles(() => ({
     display: "flex",
     alignItems: "center",
   },
-  logout: {
-    borderRadius: '0px'
-  }
 }));
