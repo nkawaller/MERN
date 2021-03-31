@@ -21,17 +21,6 @@ const Form = ({ currentId, setCurrentId }) => {
     if (post) setPostData(post);
   }, [post])
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-
-  //   if(currentId === 0) {
-  //     dispatch(createPost({ ...postData, name: user?.result?.name} ));
-  //     clear();
-  //   } else {
-  //     dispatch(updatePost(currentId, { ...postData, name: user?.result?.name}))
-  //     clear();
-  //   }
-  // };
 
   const handleSubmit = (e) => {
     e.preventDefault();

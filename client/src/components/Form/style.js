@@ -14,7 +14,6 @@ export default makeStyles((theme) => ({
         display: 'flex',
         flexWrap: 'wrap',
         justifyContent: 'center',
-        // background: 'hsla(185, 100%, 76%, 0.3)',
     },
     fileInput: {
         width: '97%',
