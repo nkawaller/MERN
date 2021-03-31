@@ -12,44 +12,45 @@ const Form = ({ currentId, setCurrentId }) => {
     tags: "",
     selectedFile: "",
   });
-  const post = useSelector((state) => (currentId ? state.posts.find((message) => message._id === currentId) : null))
+  const post = useSelector((state) =>
+    currentId ? state.posts.find((message) => message._id === currentId) : null
+  );
   const classes = useStyles();
   const dispatch = useDispatch();
-  const user = JSON.parse(localStorage.getItem('profile'))
+  const user = JSON.parse(localStorage.getItem("profile"));
 
   useEffect(() => {
     if (post) setPostData(post);
-  }, [post])
-
+  }, [post]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if(currentId === 0) {
-      dispatch(createPost({ ...postData, name: user?.result?.name}));
+    if (currentId === 0) {
+      dispatch(createPost({ ...postData, name: user?.result?.name }));
       clear();
     } else {
-      dispatch(updatePost(currentId, { ...postData, name: user?.result?.name}));
+      dispatch(
+        updatePost(currentId, { ...postData, name: user?.result?.name })
+      );
       clear();
     }
   };
 
   const clear = () => {
     setCurrentId(0);
-    setPostData({ title: '', message: '', tags: '', selectedFile: '' })
+    setPostData({ title: "", message: "", tags: "", selectedFile: "" });
   };
 
-  if(!user?.result?.name) {
-    return ( 
-
-    <Paper className={classes.paper}>
+  if (!user?.result?.name) {
+    return (
+      <Paper className={classes.paper}>
         <Typography variant="h6" align="center">
-            Please sign in to share photos
+          Please sign in to share photos
         </Typography>
-    </Paper>
-    )
+      </Paper>
+    );
   }
   return (
-
     <Paper className={classes.paper} elevation={5}>
       <form
         autoComplete="off"
@@ -57,7 +58,9 @@ const Form = ({ currentId, setCurrentId }) => {
         className={`${classes.root} ${classes.form}`}
         onSubmit={handleSubmit}
       >
-        <Typography variant="h6">{currentId ? `Editing "${post.title}"` : 'Add an image'}</Typography>
+        <Typography variant="h5">
+          {currentId ? `Editing "${post.title}"` : "Add an image"}
+        </Typography>
         <TextField
           name="title"
           variant="outlined"
@@ -84,7 +87,9 @@ const Form = ({ currentId, setCurrentId }) => {
           label="Tags"
           fullWidth
           value={postData.tags}
-          onChange={(e) => setPostData({ ...postData, tags: e.target.value.split(',') })}
+          onChange={(e) =>
+            setPostData({ ...postData, tags: e.target.value.split(",") })
+          }
         />
         <div className={classes.fileInput}>
           <FileBase
