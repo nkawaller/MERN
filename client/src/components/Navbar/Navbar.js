@@ -36,7 +36,7 @@ useEffect(() => {
     <AppBar data-testid='navbar' className={classes.appBar} position="static" color="transparent" elevation={0}>
       <div className={classes.brandContainer}>
         <Typography component={Link} to='/' className={classes.heading} variant="h3" align="left">
-          Instagram Clone
+          Image Gallery
         </Typography>
       </div>
       <Toolbar className={classes.toolbar}>
@@ -44,10 +44,10 @@ useEffect(() => {
         <div className={classes.profile}>
                           <Avatar className={classes.purple} alt={user.result.name} src={user.result.imageUrl}>{user.result.name.charAt(0)}</Avatar>
         <Typography className={classes.userName} variant="h6">{user.result.name}</Typography>
-        <Button variant="outlined" className={classes.logout} color="default" onClick={logout}>Log Out</Button>
+        <Button variant="outlined" className={classes.logout} color="default" onClick={logout}>Sign Out</Button>
         </div>
         ) : (
-        <Button component={Link} to='/auth' variant="outlined">Log In</Button>
+        <Button component={Link} to='/auth' variant="outlined">Sign In</Button>
         )}
       </Toolbar>
     </AppBar>
