@@ -43,7 +43,7 @@ const Form = ({ currentId, setCurrentId }) => {
 
     <Paper className={classes.paper}>
         <Typography variant="h6" align="center">
-            Please sign in
+            Please sign in to share photos
         </Typography>
     </Paper>
     )
@@ -107,8 +107,6 @@ const Form = ({ currentId, setCurrentId }) => {
         </Button>
         <Button
           className={classes.button}
-          // variant="outlined"
-          // color="default"
           size="small"
           onClick={clear}
           fullWidth
