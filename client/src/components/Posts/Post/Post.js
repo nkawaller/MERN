@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useRef, useEffect } from "react";
 import {
   Card,
   CardActions,
@@ -12,6 +12,7 @@ import FavoriteIcon from "@material-ui/icons/Favorite";
 import DeleteIcon from "@material-ui/icons/Delete";
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 import moment from "moment";
+import { TweenMax, Power3 } from 'gsap';
 import { useDispatch } from "react-redux";
 
 import { deletePost, likePost } from "../../../actions/posts";
@@ -21,6 +22,20 @@ const Post = ({ post, setCurrentId }) => {
   const dispatch = useDispatch();
   const classes = useStyles();
   const user = JSON.parse(localStorage.getItem("profile"));
+
+  let card = useRef(null);
+
+  useEffect(() => {
+    TweenMax.to(
+      card.current,
+      5,
+      {
+        opacity: 1,
+        x: 20,
+        ease: Power3.easeOut
+      }
+    )
+  })
 
   const Likes = () => {
     if (post.likes.length > 0) {
@@ -51,7 +66,7 @@ const Post = ({ post, setCurrentId }) => {
   };
 
   return (
-    <Card className={classes.card} elevation={5}>
+    <Card ref={card} className={classes.card} elevation={5}>
       <CardMedia
         className={classes.media}
         image={
