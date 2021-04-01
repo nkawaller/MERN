@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useHistory, useLocation } from 'react-router-dom';
 import { AppBar, Typography, Toolbar, Button, Avatar } from "@material-ui/core";
 import { useDispatch } from 'react-redux';
+import { TweenMax, Power3 } from 'gsap';
 import decode from 'jwt-decode'
 import useStyles from './style'
 
