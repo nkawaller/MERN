@@ -8,20 +8,29 @@ import useStyles from './style'
 
 const Navbar = () => {
 
-  let headingItem = useRef('Hello! GSAP')
+  let headingItem = useRef(null)
+  let signInButton = useRef(null)
 
-  useEffect(() => {
-    console.log(headingItem)
-    TweenMax.to(
-      headingItem,
-      1.5,
-      {
-        opacity: 1,
-        x: 20,
-        ease: Power3.easeOut
-      }
-    )
-  }, [])
+  // useEffect(() => {
+  //   TweenMax.to(
+  //     headingItem,
+  //     1.5,
+  //     {
+  //       opacity: 1,
+  //       x: 20,
+  //       ease: Power3.easeOut
+  //     }
+  //   )
+  //   TweenMax.to(
+  //     signInButton,
+  //     1.5,
+  //     {
+  //       opacity: 1,
+  //       x: -20,
+  //       ease: Power3.easeOut
+  //     }
+  //   )
+  // }, [])
 
 const classes = useStyles();
 const history = useHistory();
@@ -63,7 +72,7 @@ useEffect(() => {
         <Button variant="outlined" className={classes.logout} color="default" onClick={logout}>Sign Out</Button>
         </div>
         ) : (
-        <Button component={Link} to='/auth' variant="outlined">Sign In</Button>
+        <Button ref={el => {signInButton = el}} className={classes.button} component={Link} to='/auth' variant="outlined">Sign In</Button>
         )}
       </Toolbar>
     </AppBar>
