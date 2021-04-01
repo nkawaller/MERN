@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link, useHistory, useLocation } from 'react-router-dom';
 import { AppBar, Typography, Toolbar, Button, Avatar } from "@material-ui/core";
 import { useDispatch } from 'react-redux';
@@ -7,6 +7,12 @@ import decode from 'jwt-decode'
 import useStyles from './style'
 
 const Navbar = () => {
+
+  let headingItem = useRef('Hello! GSAP')
+
+  useEffect(() => {
+    console.log(headingItem)
+  }, [])
 
 const classes = useStyles();
 const history = useHistory();
@@ -36,7 +42,7 @@ useEffect(() => {
   return (
     <AppBar data-testid='navbar' className={classes.appBar} position="static" color="transparent" elevation={0}>
       <div className={classes.brandContainer}>
-        <Typography component={Link} to='/' className={classes.heading} variant="h3" align="left">
+        <Typography ref={el => {headingItem = el}}component={Link} to='/' className={classes.heading} variant="h3" align="left">
           Image Gallery
         </Typography>
       </div>
