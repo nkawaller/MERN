@@ -12,6 +12,15 @@ const Navbar = () => {
 
   useEffect(() => {
     console.log(headingItem)
+    TweenMax.to(
+      headingItem,
+      1.5,
+      {
+        opacity: 1,
+        x: 20,
+        ease: Power3.easeOut
+      }
+    )
   }, [])
 
 const classes = useStyles();

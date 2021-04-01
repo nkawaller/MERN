@@ -13,6 +13,7 @@ export default makeStyles(() => ({
   heading: {
     color: "black",
     textDecoration: 'none',
+    opacity: 0
   },
   toolbar: {
     width: '50%',
