@@ -12,6 +12,7 @@ export default makeStyles(() => ({
   },
   heading: {
     color: "black",
+    fontSize: "72px",
     textDecoration: 'none',
     opacity: 0
   },
