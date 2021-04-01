@@ -10,27 +10,37 @@ const Navbar = () => {
 
   let headingItem = useRef(null)
   let signInButton = useRef(null)
+  let signOutButton = useRef(null)
 
-  // useEffect(() => {
-  //   TweenMax.to(
-  //     headingItem,
-  //     1.5,
-  //     {
-  //       opacity: 1,
-  //       x: 20,
-  //       ease: Power3.easeOut
-  //     }
-  //   )
-  //   TweenMax.to(
-  //     signInButton,
-  //     1.5,
-  //     {
-  //       opacity: 1,
-  //       x: -20,
-  //       ease: Power3.easeOut
-  //     }
-  //   )
-  // }, [])
+  useEffect(() => {
+    TweenMax.to(
+      headingItem.current,
+      1.5,
+      {
+        opacity: 1,
+        x: 20,
+        ease: Power3.easeOut
+      }
+    )
+    TweenMax.to(
+      signInButton.current,
+      1.5,
+      {
+        opacity: 1,
+        x: -20,
+        ease: Power3.easeOut
+      }
+    )
+    TweenMax.to(
+      signOutButton.current,
+      1.5,
+      {
+        opacity: 1,
+        x: -20,
+        ease: Power3.easeOut
+      }
+    )
+  }, [])
 
 const classes = useStyles();
 const history = useHistory();
@@ -60,7 +70,7 @@ useEffect(() => {
   return (
     <AppBar data-testid='navbar' className={classes.appBar} position="static" color="transparent" elevation={0}>
       <div className={classes.brandContainer}>
-        <Typography ref={el => {headingItem = el}}component={Link} to='/' className={classes.heading} variant="h3" align="left">
+        <Typography ref={headingItem}component={Link} to='/' className={classes.heading} variant="h3" align="left">
           Image Gallery
         </Typography>
       </div>
@@ -69,10 +79,10 @@ useEffect(() => {
         <div className={classes.profile}>
                           <Avatar className={classes.purple} alt={user.result.name} src={user.result.imageUrl}>{user.result.name.charAt(0)}</Avatar>
         <Typography className={classes.userName} variant="h6">{user.result.name}</Typography>
-        <Button variant="outlined" className={classes.logout} color="default" onClick={logout}>Sign Out</Button>
+        <Button  ref={signOutButton} variant="outlined" className={classes.logout} color="default" onClick={logout}>Sign Out</Button>
         </div>
         ) : (
-        <Button ref={el => {signInButton = el}} className={classes.button} component={Link} to='/auth' variant="outlined">Sign In</Button>
+        <Button  ref={signInButton} className={classes.button} component={Link} to='/auth' variant="outlined">Sign In</Button>
         )}
       </Toolbar>
     </AppBar>
@@ -80,3 +90,4 @@ useEffect(() => {
 };
 
 export default Navbar;
+// ref={el => {signInButton = el}}
