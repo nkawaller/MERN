@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { TextField, Button, Typography, Paper } from "@material-ui/core";
 import { useDispatch, useSelector } from "react-redux";
 import FileBase from "react-file-base64";
+import { TweenMax, Power3 } from 'gsap';
 import useStyles from "./style";
 import { createPost, updatePost } from "../../actions/posts";
 
@@ -18,6 +19,20 @@ const Form = ({ currentId, setCurrentId }) => {
   const classes = useStyles();
   const dispatch = useDispatch();
   const user = JSON.parse(localStorage.getItem("profile"));
+
+  const postForm = useRef(null);
+
+  useEffect(() => {
+    TweenMax.to(
+      postForm.current,
+      5,
+      {
+        opacity: 1,
+        x: -20,
+        ease: Power3.easeOut
+      }
+    )
+  })
 
   useEffect(() => {
     if (post) setPostData(post);
@@ -51,7 +66,7 @@ const Form = ({ currentId, setCurrentId }) => {
     );
   }
   return (
-    <Paper className={classes.paper} elevation={5}>
+    <Paper ref={postForm} className={classes.paper} elevation={5}>
       <form
         autoComplete="off"
         noValidate

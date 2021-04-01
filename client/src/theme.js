@@ -1,6 +1,9 @@
 import { createMuiTheme } from '@material-ui/core/styles';
 
 const theme = createMuiTheme({
+    transitions: {
+      create: () => 'none'
+    },
     palette: {
     primary: {
       main: '#db7093',
