@@ -1,9 +1,10 @@
-import React, { useState } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 
 import { Avatar, Button, Paper, Grid, Typography, Container } from '@material-ui/core'
 import { GoogleLogin } from 'react-google-login'
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import { TweenMax, Power3 } from 'gsap';
 import LockOutLinedIcon from '@material-ui/icons/LockOutlined'
 import useStyles from './style'
 import Input from './Input'
@@ -62,9 +63,24 @@ const Auth = () => {
         console.log("Google sign in failed. Please try again later")
     }
 
+    let authForm = useRef(null);
+
+
+  useEffect(() => {
+    TweenMax.to(
+      authForm.current,
+      5,
+      {
+        opacity: 1,
+        y: -20,
+        ease: Power3.easeOut
+      }
+    )
+  }, [])
+
     return (
     <Container component='main' maxWidth="xs">
-        <Paper className={classes.paper} elevation={15}>
+        <Paper ref={authForm} className={classes.paper} elevation={15}>
             <Avatar className={classes.avatar}>
                 <LockOutLinedIcon />
             </Avatar>
