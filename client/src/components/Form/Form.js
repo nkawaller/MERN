@@ -21,10 +21,20 @@ const Form = ({ currentId, setCurrentId }) => {
   const user = JSON.parse(localStorage.getItem("profile"));
 
   const postForm = useRef(null);
+  const pleaseSignIn = useRef(null);
 
   useEffect(() => {
     TweenMax.to(
       postForm.current,
+      5,
+      {
+        opacity: 1,
+        x: -20,
+        ease: Power3.easeOut
+      }
+    )
+    TweenMax.to(
+     pleaseSignIn.current,
       5,
       {
         opacity: 1,
@@ -58,7 +68,7 @@ const Form = ({ currentId, setCurrentId }) => {
 
   if (!user?.result?.name) {
     return (
-      <Paper className={classes.paper}>
+      <Paper ref={pleaseSignIn}className={classes.paper}>
         <Typography variant="h6" align="center">
           Please sign in to share photos
         </Typography>
