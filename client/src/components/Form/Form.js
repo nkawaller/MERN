@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { TextField, Button, Typography, Paper } from "@material-ui/core";
 import { useDispatch, useSelector } from "react-redux";
 import FileBase from "react-file-base64";
-import { TweenMax, Power3 } from 'gsap';
+import { TweenMax, Power3 } from "gsap";
 import useStyles from "./style";
 import { createPost, updatePost } from "../../actions/posts";
 
@@ -24,25 +24,17 @@ const Form = ({ currentId, setCurrentId }) => {
   const pleaseSignIn = useRef(null);
 
   useEffect(() => {
-    TweenMax.to(
-      postForm.current,
-      2,
-      {
-        opacity: 1,
-        x: -20,
-        ease: Power3.easeOut
-      }
-    )
-    TweenMax.to(
-     pleaseSignIn.current,
-      2,
-      {
-        opacity: 1,
-        x: -20,
-        ease: Power3.easeOut
-      }
-    )
-  })
+    TweenMax.to(postForm.current, 2, {
+      opacity: 1,
+      x: -20,
+      ease: Power3.easeOut,
+    });
+    TweenMax.to(pleaseSignIn.current, 2, {
+      opacity: 1,
+      x: -20,
+      ease: Power3.easeOut,
+    });
+  });
 
   useEffect(() => {
     if (post) setPostData(post);
@@ -68,7 +60,7 @@ const Form = ({ currentId, setCurrentId }) => {
 
   if (!user?.result?.name) {
     return (
-      <Paper ref={pleaseSignIn}className={classes.paper}>
+      <Paper ref={pleaseSignIn} className={classes.paper}>
         <Typography variant="h6" align="center">
           Please sign in to share photos
         </Typography>
