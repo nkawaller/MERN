@@ -1,4 +1,4 @@
-import React, {useRef, useEffect } from "react";
+import React, { useRef, useEffect } from "react";
 import {
   Card,
   CardActions,
@@ -12,7 +12,7 @@ import FavoriteIcon from "@material-ui/icons/Favorite";
 import DeleteIcon from "@material-ui/icons/Delete";
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 import moment from "moment";
-import { TweenMax, Power3 } from 'gsap';
+import { TweenMax, Power3 } from "gsap";
 import { useDispatch } from "react-redux";
 
 import { deletePost, likePost } from "../../../actions/posts";
@@ -26,16 +26,12 @@ const Post = ({ post, setCurrentId }) => {
   let card = useRef(null);
 
   useEffect(() => {
-    TweenMax.to(
-      card.current,
-      2,
-      {
-        opacity: 1,
-        x: 20,
-        ease: Power3.easeOut
-      }
-    )
-  })
+    TweenMax.to(card.current, 2, {
+      opacity: 1,
+      x: 20,
+      ease: Power3.easeOut,
+    });
+  });
 
   const Likes = () => {
     if (post.likes.length > 0) {
@@ -51,7 +47,7 @@ const Post = ({ post, setCurrentId }) => {
         </>
       ) : (
         <>
-          <FavoriteIcon  className={classes.heart} fontSize="small" />
+          <FavoriteIcon className={classes.heart} fontSize="small" />
           &nbsp;{post.likes.length} {post.likes.length === 1 ? "Like" : "Likes"}
         </>
       );
@@ -59,7 +55,7 @@ const Post = ({ post, setCurrentId }) => {
 
     return (
       <>
-        <FavoriteBorderIcon  className={classes.heart} fontSize="small" />
+        <FavoriteBorderIcon className={classes.heart} fontSize="small" />
         &nbsp;Like
       </>
     );
@@ -94,7 +90,7 @@ const Post = ({ post, setCurrentId }) => {
         <Typography variant="body2" color="textSecondary">
           {post.tags.map((tag) => `#${tag} `)}
         </Typography>
-        </div>
+      </div>
       <div className={classes.date}>
         <Typography variant="caption" color="textSecondary">
           {moment(post.createdAt).fromNow()}
