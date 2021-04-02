@@ -7,7 +7,7 @@ export default makeStyles((theme) => ({
     flexDirection: "column",
     alignItems: "center",
     padding: theme.spacing(2),
-    opacity: 0
+    opacity: 0,
   },
   root: {
     "& .MuiTextField-root": {
@@ -16,16 +16,16 @@ export default makeStyles((theme) => ({
   },
   avatar: {
     margin: theme.spacing(1),
-    backgroundColor: 'black'
+    backgroundColor: "black",
   },
   form: {
-      width: '100%',
-      marginTop: theme.spacing(3)
+    width: "100%",
+    marginTop: theme.spacing(3),
   },
   submit: {
-      margin: theme.spacing(3, 0, 2)
+    margin: theme.spacing(3, 0, 2),
   },
   googleButton: {
-      marginBottom: theme.spacing(2)
-  }
+    marginBottom: theme.spacing(2),
+  },
 }));
