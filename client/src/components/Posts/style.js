@@ -1,19 +1,17 @@
-import { makeStyles } from '@material-ui/core/styles'
+import { makeStyles } from "@material-ui/core/styles";
 
 export default makeStyles((theme) => ({
-    container: {
-        // border: '3px solid black',
-        display: 'flex',
-        alignItems: 'center',
-        // marginTop: '5rem'
-    },
-    smMargin: {
-        margin: theme.spacing(1),
-    },
-    actionDiv: {
-        textAlign: 'center',
-    },
-    progress: {
-        color: 'palevioletred'
-    }
-}))
+  container: {
+    display: "flex",
+    alignItems: "center",
+  },
+  smMargin: {
+    margin: theme.spacing(1),
+  },
+  actionDiv: {
+    textAlign: "center",
+  },
+  progress: {
+    color: "palevioletred",
+  },
+}));
