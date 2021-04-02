@@ -35,6 +35,6 @@ export default makeStyles(() => ({
     alignItems: "center",
   },
   button: {
-    opacity: 0
+    opacity: 1
   }
 }));

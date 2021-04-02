@@ -15,7 +15,7 @@ const Navbar = () => {
   useEffect(() => {
     TweenMax.to(
       headingItem.current,
-      5,
+      2,
       {
         opacity: 1,
         x: 20,
@@ -24,7 +24,7 @@ const Navbar = () => {
     )
     TweenMax.to(
       signInButton.current,
-      5,
+      2,
       {
         opacity: 1,
         x: -20,
@@ -33,7 +33,7 @@ const Navbar = () => {
     )
     TweenMax.to(
       signOutButton.current,
-      5,
+      2,
       {
         opacity: 1,
         x: -20,

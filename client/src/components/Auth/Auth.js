@@ -69,7 +69,7 @@ const Auth = () => {
   useEffect(() => {
     TweenMax.to(
       authForm.current,
-      5,
+      2,
       {
         opacity: 1,
         y: -20,

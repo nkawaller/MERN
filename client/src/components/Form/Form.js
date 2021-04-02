@@ -26,7 +26,7 @@ const Form = ({ currentId, setCurrentId }) => {
   useEffect(() => {
     TweenMax.to(
       postForm.current,
-      5,
+      2,
       {
         opacity: 1,
         x: -20,
@@ -35,7 +35,7 @@ const Form = ({ currentId, setCurrentId }) => {
     )
     TweenMax.to(
      pleaseSignIn.current,
-      5,
+      2,
       {
         opacity: 1,
         x: -20,
