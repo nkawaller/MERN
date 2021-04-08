@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from "react";
+import { useIntersection } from 'react-use'
 import {
   Card,
   CardActions,
@@ -12,7 +13,7 @@ import FavoriteIcon from "@material-ui/icons/Favorite";
 import DeleteIcon from "@material-ui/icons/Delete";
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 import moment from "moment";
-import { TweenMax, Power3 } from "gsap";
+import { gsap, TweenMax, Power3 } from "gsap";
 import { useDispatch } from "react-redux";
 
 import { deletePost, likePost } from "../../../actions/posts";
@@ -24,6 +25,35 @@ const Post = ({ post, setCurrentId }) => {
   const user = JSON.parse(localStorage.getItem("profile"));
 
   let card = useRef(null);
+
+  const intersection = useIntersection(card, {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.5
+  });
+
+  const fadeIn = (element) => {
+    gsap.to(element, 1, {
+      opacity: 1,
+      y: -60,
+      ease: 'power4.out',
+      stagger: {
+        amount: .3
+      }
+    })
+  }
+
+  const fadeOut = (element) => {
+    gsap.to(element, 1, {
+      opacity: 0,
+      y: -20,
+      ease: 'power4.out'
+    })
+  }
+  intersection && intersection.intersectionRatio < .5 ?
+  // Not reached
+  fadeOut(".fadeIn")
+  : fadeIn(".fadeIn") // Reached, so animate
 
   useEffect(() => {
     TweenMax.to(card.current, 2, {
