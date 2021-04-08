@@ -25,8 +25,9 @@ const Post = ({ post, setCurrentId }) => {
   const user = JSON.parse(localStorage.getItem("profile"));
 
   let card = useRef(null);
+  let cardFade = useRef(null);
 
-  const intersection = useIntersection(card, {
+  const intersection = useIntersection(cardFade, {
     root: null,
     rootMargin: '0px',
     threshold: 1
@@ -92,7 +93,7 @@ const Post = ({ post, setCurrentId }) => {
   };
 
   return (
-    <Card ref={card} className={classes.card} elevation={5}>
+    <Card ref={cardFade} className="fadeIn" elevation={5}>
       <CardMedia
         className={classes.media}
         image={
