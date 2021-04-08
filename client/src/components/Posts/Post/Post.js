@@ -29,7 +29,7 @@ const Post = ({ post, setCurrentId }) => {
   const intersection = useIntersection(card, {
     root: null,
     rootMargin: '0px',
-    threshold: 0.5
+    threshold: .2
   });
 
   const fadeIn = (element) => {
@@ -50,7 +50,7 @@ const Post = ({ post, setCurrentId }) => {
       ease: 'power4.out'
     })
   }
-  intersection && intersection.intersectionRatio < .5 ?
+  intersection && intersection.intersectionRatio < .2 ?
   // Not reached
   fadeOut(".fadeIn")
   : fadeIn(".fadeIn") // Reached, so animate
